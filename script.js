@@ -12,3 +12,15 @@ function getPlayerSelection () {
 };
 
 //Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection - and then return a string that declares the winner of the round like so: "You Lose! Paper beats Rock"
+
+function playRound () {
+    if (computerChoice == playerSelection){
+        alert("it's a draw");
+    } else if (computerChoice == 'rock' && playerSelection == 'Scissors' || computerChoice == 'Scissors' && playerSelection == 'paper' || computerChoice          == 'paper' && playerSelection == 'rock') {
+        alert("computer wins");
+    } else if (playerSelection == 'rock' && computerChoice == 'Scissors' || playerSelection == 'Scissors' && computerChoice == 'paper' || playerSelection        == 'paper' && computerChoice == 'rock') {
+        alert("computer wins");
+    } else {
+        alert("invalid choose");
+    }
+};
