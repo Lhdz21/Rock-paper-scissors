@@ -1,3 +1,10 @@
+function startGame () {
+    for (let i = 1; i < 6; i++) { // shows 0, then 1, then 2
+        alert(`round ${i}`);  
+        playRound(); 
+};
+}
+
 
 function playRound () {
     let playerSelection = prompt('choose between rock paper or scissors',);
