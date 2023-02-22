@@ -40,6 +40,7 @@ align-items: center;
     margin: 0;
     color: #F1FAEE;
     border: outset 5px;
+    margin: 0px 10px;
 
 }
 
@@ -90,7 +91,6 @@ align-items: center;
 }
 
 .gameDisplay{
-    border: 2px solid #1D3557;
     height: 200px;
     display: flex;
     margin: 25px 0px;
@@ -115,7 +115,7 @@ align-items: center;
     justify-content: center;
 }
 
-button{
+.emojiButton{
     font-size: 100px;
     padding: 20px 0px;
     width: 250px;
@@ -136,8 +136,28 @@ button{
     align-items: center;
     color: #F1FAEE;
     font-family: 'Press Start 2P';
+    margin-top: 20px;
 }
 
 .footer a{
     color: #F1FAEE;
+}
+
+.finalScore{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    align-items: center;
+    align-self: center;
+}
+
+.finalScore button{
+font-family: 'Press Start 2P';
+font-size: 24px;
+color: #F1FAEE;
+background-color: #1D3557;
+padding: 20px;
+border: outset 10px;
+border-color: #1D3557;
+    
 }
