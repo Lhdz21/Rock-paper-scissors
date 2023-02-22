@@ -128,3 +128,16 @@ button{
     font-size: 100px;
     margin: 0px;
 }
+
+.footer{
+    background-color: #1D3557;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F1FAEE;
+    font-family: 'Press Start 2P';
+}
+
+.footer a{
+    color: #F1FAEE;
+}
