@@ -1,0 +1,18 @@
+body{
+    background-color: #F1FAEE;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+background-color: #A8DADC;
+padding: 20px;
+font-family: "Press Start 2P";
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.header h1{
+    color: #E63946;
+}
