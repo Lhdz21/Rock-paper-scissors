@@ -80,16 +80,34 @@ align-items: center;
     flex-direction: column;
 }
 
-.gameCourt p{
+.gamerText{
     align-self: center;
     font-family: 'Press Start 2P';
     font-size: 24px;
     color: #1D3557;
+    text-align: center;
+    margin: 5px;
 }
 
 .gameDisplay{
     border: 2px solid #1D3557;
     height: 200px;
+    display: flex;
+    margin: 25px 0px;
+    width: 700px;
+    align-self: center;
+    justify-content: center;
+}
+
+.gameDisplay1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    font-size: 20px;
+    height: auto;
+    margin: 0;
 }
 .buttonsContainer{
     display: flex;
@@ -104,4 +122,9 @@ button{
     background-color: #F1FAEE;
     border-radius: 8px;
     border: 0px;
+}
+
+.emojis{
+    font-size: 100px;
+    margin: 0px;
 }
