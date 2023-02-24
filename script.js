@@ -13,6 +13,16 @@ function computerChoice() {
     console.log(computerChoice);
 }
 
+function playerChoice() {
+    const btn = document.querySelectorAll('button.emojiButton');
+    btn.forEach((button) => {
+        button.addEventListener('click', () => {
+        console.log(button.id);
+        });
+    });;
+
+}
+
 let computerCounter = 0;
 let playerCounter = 0;
 let roundCounter = 0;
