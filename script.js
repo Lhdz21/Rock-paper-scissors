@@ -18,14 +18,6 @@ btn.forEach((button) => {
 
 });;
 
-
-function startGame () {
-    for (let i = 1; i < 6; i++) {
-        alert(`round ${i}`);  
-        playRound(); 
-};
-}
-
 function computerChoice() {
     
     let gameOptions = ['rock','paper','scissors'];
@@ -86,11 +78,6 @@ function playRound () {
             roundCounter++;
             document.getElementById('roundNumber').textContent = roundCounter;
             document.getElementById('playerScore').textContent = playerCounter;
-
-
-    } else {
-        alert("invalid choose");
-        roundCounter++;
     };
 
     if (computerCounter == 5){
@@ -112,6 +99,5 @@ function playRound () {
         document.getElementById('roundNumber').textContent = roundCounter;
 
     };
-console.log(computerCounter);
-console.log(playerCounter);
+
 };
