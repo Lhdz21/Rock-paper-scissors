@@ -1,6 +1,10 @@
-let rockEmoji = `&#9994;&#127997;`;
-let paperEmoji = `&#9995;&#127997;`; 
-let scissorsEmoji = `&#9996;&#127997;`;
+let rockEmoji = String.fromCodePoint(9994,127997);
+let paperEmoji = String.fromCodePoint(9995,127997); 
+let scissorsEmoji = String.fromCodePoint(9996,127997);
+
+
+console.log("\uD83D\uDE00");
+console.log(rockEmoji);
 
 let playerChoice;
 
@@ -17,9 +21,32 @@ function computerChoice() {
     let index = Math.floor(Math.random() * 3);
     let cpuChoice = `${gameOptions.at(index)}`
     document.getElementById('cpuChose').textContent = `CPU Chose`;
-    
-    
+    changeCpuEmoji(cpuChoice);
+ 
     return cpuChoice;
+}
+function changeCpuEmoji(x){
+
+    if(x == 'rock') {
+        document.getElementById('cpuChoseEmoji').textContent = rockEmoji;
+    } else if(x == 'paper') {
+        document.getElementById('cpuChoseEmoji').textContent = paperEmoji;
+    } else if(x == 'scissors') {
+        document.getElementById('cpuChoseEmoji').textContent = scissorsEmoji;
+    }
+    
+}
+
+function changePlayerEmoji(x){
+
+    if(x == 'rock') {
+        document.getElementById('YouChoseEmoji').textContent = rockEmoji;
+    } else if(x == 'paper') {
+        document.getElementById('YouChoseEmoji').textContent = paperEmoji;
+    } else if(x == 'scissors') {
+        document.getElementById('YouChoseEmoji').textContent = scissorsEmoji;
+    }
+    
 }
 
 const btn = document.querySelectorAll('button.emojiButton');
@@ -27,6 +54,7 @@ btn.forEach((button) => {
     button.addEventListener('click', () => {
     playerChoice = `${button.id}`;
     document.getElementById('youChose').textContent = `You Chose`;
+    changePlayerEmoji(button.id);
     console.log(playerChoice);
     playRound();
     });
