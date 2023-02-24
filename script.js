@@ -1,3 +1,9 @@
+let rockEmoji = `&#9994;&#127997;`;
+let paperEmoji = `&#9995;&#127997;`; 
+let scissorsEmoji = `&#9996;&#127997;`;
+
+let playerChoice;
+
 function startGame () {
     for (let i = 1; i < 6; i++) {
         alert(`round ${i}`);  
@@ -9,42 +15,46 @@ function computerChoice() {
     
     let gameOptions = ['rock','paper','scissors'];
     let index = Math.floor(Math.random() * 3);
-    let computerChoice= (`${gameOptions.at(index)}`);
-    console.log(computerChoice);
+    let cpuChoice = `${gameOptions.at(index)}`
+    document.getElementById('cpuChose').textContent = `CPU Chose`;
+    
+    
+    return cpuChoice;
 }
 
-function playerChoice() {
-    const btn = document.querySelectorAll('button.emojiButton');
-    btn.forEach((button) => {
-        button.addEventListener('click', () => {
-        console.log(button.id);
-        });
-    });;
+const btn = document.querySelectorAll('button.emojiButton');
+btn.forEach((button) => {
+    button.addEventListener('click', () => {
+    playerChoice = `${button.id}`;
+    document.getElementById('youChose').textContent = `You Chose`;
+    console.log(playerChoice);
+    playRound();
+    });
 
-}
+});;
+
+
 
 let computerCounter = 0;
 let playerCounter = 0;
 let roundCounter = 0;
 
 function playRound () {
-    let playerSelection = prompt('choose between rock paper or scissors',);
-    console.log(playerSelection);
-
-  
+  computerSelection = computerChoice();
+  playerSelection = playerChoice;
     
-    if (computerChoice == playerSelection){
+    if (computerSelection == playerSelection){
         alert("it's a draw");
         roundCounter++;
-    } else if (computerChoice == 'rock' && playerSelection == 'scissors' 
-            || computerChoice == 'scissors' && playerSelection == 'paper' 
-            || computerChoice == 'paper' && playerSelection == 'rock') {
+    } else if (computerSelection == 'rock' && playerSelection == 'scissors' 
+            || computerSelection == 'scissors' && playerSelection == 'paper' 
+            || computerSelection == 'paper' && playerSelection == 'rock') {
         alert("computer wins");
         computerCounter++;
         roundCounter++;
-    } else if (playerSelection == 'rock' && computerChoice == 'scissors'    
-            || playerSelection == 'scissors' && computerChoice == 'paper' 
-            || playerSelection == 'paper' && computerChoice == 'rock') {
+    } else if (playerSelection == 'rock' && computerSelection == 'scissors'    
+            || playerSelection == 'scissors' && computerSelection == 'paper' 
+            || playerSelection == 'paper' && computerSelection == 'rock') {
         alert("you win");
         playerCounter++;
         roundCounter++;
