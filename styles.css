@@ -159,5 +159,9 @@ background-color: #1D3557;
 padding: 20px;
 border: outset 10px;
 border-color: #1D3557;
-    
+}
+
+#theWinner{
+    font-size: 100px;
+    margin: 100px 0px;
 }

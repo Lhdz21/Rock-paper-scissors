@@ -19,6 +19,10 @@ btn.forEach((button) => {
 
 });;
 
+const btnPlayAgain = document.getElementById('playAgain');
+btnPlayAgain.addEventListener('click', showGameCourt);
+
+
 function hideFinalWinner() {
 
     const displayWinner = document.getElementById("displayWinner");
@@ -27,15 +31,27 @@ function hideFinalWinner() {
             displayWinner.style.display = "none";
         } 
     }
-function hideGameCourt() {
+function showGameCourt() {
 
     const gameCourt = document.getElementById("gameCourt");
-        
-        if (gameCourt.style.display === "") {
-            gameCourt.style.display = "none";
+    const scoreBoard = document.getElementById("scoreBoard");
+    const displayWinner = document.getElementById("displayWinner");
+
+        if (gameCourt.style.display === "none") {
+            gameCourt.style.display = "flex";
+            displayWinner.style.display = "none";
+            scoreBoard.style.display = "flex";
+            cleanUpGame();
         } 
     }
+function cleanUpGame() {
+    document.getElementById('YouChoseEmoji').textContent = '';
+    document.getElementById('cpuChoseEmoji').textContent = '';
+    document.getElementById('cpuChose').textContent = ``;
+    document.getElementById('youChose').textContent = ``;
+    document.getElementById('roundWinner').textContent = ``;
 
+}
 function ShowFinalWinner() {
 
     const displayWinner = document.getElementById("displayWinner");
