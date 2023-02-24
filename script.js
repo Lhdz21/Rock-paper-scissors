@@ -76,6 +76,7 @@ function playRound () {
             computerCounter++;
             roundCounter++;
             document.getElementById('roundNumber').textContent = roundCounter;
+            document.getElementById('cpuScore').textContent = computerCounter;
 
     } else if (playerSelection == 'rock' && computerSelection == 'scissors'    
             || playerSelection == 'scissors' && computerSelection == 'paper' 
@@ -84,27 +85,32 @@ function playRound () {
             playerCounter++;
             roundCounter++;
             document.getElementById('roundNumber').textContent = roundCounter;
+            document.getElementById('playerScore').textContent = playerCounter;
+
 
     } else {
         alert("invalid choose");
         roundCounter++;
     };
 
-    if (roundCounter == 5 && computerCounter > playerCounter){
+    if (computerCounter == 5){
         alert('COMPUTER WINS');
         computerCounter = 0;
+        document.getElementById('cpuScore').textContent = computerCounter;
         playerCounter = 0;
+        document.getElementById('playerScore').textContent = playerCounter;
         roundCounter = 0;
-    } else if (roundCounter == 5 && computerCounter < playerCounter){
+        document.getElementById('roundNumber').textContent = roundCounter;
+
+    } else if (playerCounter == 5 ){
         alert('YOU WIN');
         computerCounter = 0;
+        document.getElementById('cpuScore').textContent = computerCounter;
         playerCounter = 0;
+        document.getElementById('playerScore').textContent = playerCounter;
         roundCounter = 0;
-    } else if (roundCounter == 5 && computerCounter == playerCounter){
-        alert('IT IS A DRAW');
-        computerCounter = 0;
-        playerCounter = 0;
-        roundCounter = 0;
+        document.getElementById('roundNumber').textContent = roundCounter;
+
     };
 console.log(computerCounter);
 console.log(playerCounter);
