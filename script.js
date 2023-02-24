@@ -72,20 +72,20 @@ function playRound () {
   playerSelection = playerChoice;
     
     if (computerSelection == playerSelection){
-        alert("it's a draw");
+        document.getElementById('roundWinner').textContent = `It's a tie`;
         roundCounter++;
     } else if (computerSelection == 'rock' && playerSelection == 'scissors' 
             || computerSelection == 'scissors' && playerSelection == 'paper' 
             || computerSelection == 'paper' && playerSelection == 'rock') {
-        alert("computer wins");
-        computerCounter++;
-        roundCounter++;
+            document.getElementById('roundWinner').textContent = `CPU win this round`;
+            computerCounter++;
+            roundCounter++;
     } else if (playerSelection == 'rock' && computerSelection == 'scissors'    
             || playerSelection == 'scissors' && computerSelection == 'paper' 
             || playerSelection == 'paper' && computerSelection == 'rock') {
-        alert("you win");
-        playerCounter++;
-        roundCounter++;
+            document.getElementById('roundWinner').textContent = `You win this round`;
+            playerCounter++;
+            roundCounter++;
     } else {
         alert("invalid choose");
         roundCounter++;
