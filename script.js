@@ -5,6 +5,9 @@ let playerChoice;
 let computerCounter = 0;
 let playerCounter = 0;
 let roundCounter = 0;
+const gameCourt = document.getElementById("gameCourt");
+const scoreBoard = document.getElementById("scoreBoard");
+const displayWinner = document.getElementById("displayWinner");
 hideFinalWinner();
 
 const btn = document.querySelectorAll('button.emojiButton');
@@ -13,56 +16,42 @@ btn.forEach((button) => {
     playerChoice = `${button.id}`;
     document.getElementById('youChose').textContent = `You Chose`;
     changePlayerEmoji(button.id);
-    console.log(playerChoice);
     playRound();
     });
-
 });;
 
 const btnPlayAgain = document.getElementById('playAgain');
 btnPlayAgain.addEventListener('click', showGameCourt);
 
-
 function hideFinalWinner() {
 
-    const displayWinner = document.getElementById("displayWinner");
-        
-        if (displayWinner.style.display === "") {
-            displayWinner.style.display = "none";
-        } 
+    displayWinner.style.display = "none";
     }
+
 function showGameCourt() {
 
-    const gameCourt = document.getElementById("gameCourt");
-    const scoreBoard = document.getElementById("scoreBoard");
-    const displayWinner = document.getElementById("displayWinner");
-
-        if (gameCourt.style.display === "none") {
-            gameCourt.style.display = "flex";
-            displayWinner.style.display = "none";
-            scoreBoard.style.display = "flex";
-            cleanUpGame();
-        } 
+    gameCourt.style.display = "flex";
+    displayWinner.style.display = "none";
+    scoreBoard.style.display = "flex";
+    cleanUpGame();
     }
+
 function cleanUpGame() {
+
     document.getElementById('YouChoseEmoji').textContent = '';
     document.getElementById('cpuChoseEmoji').textContent = '';
     document.getElementById('cpuChose').textContent = ``;
     document.getElementById('youChose').textContent = ``;
     document.getElementById('roundWinner').textContent = ``;
+    }
 
-}
 function ShowFinalWinner() {
 
-    const displayWinner = document.getElementById("displayWinner");
-    const gameCourt = document.getElementById("gameCourt");
-    const scoreBoard = document.getElementById("scoreBoard");
-   
-        if (displayWinner.style.display === "none") {
-            displayWinner.style.display = "flex";
-            gameCourt.style.display = "none";
-            scoreBoard.style.display = "none";
-        } 
+    if (displayWinner.style.display === "none") {
+        displayWinner.style.display = "flex";
+        gameCourt.style.display = "none";
+        scoreBoard.style.display = "none";
+    } 
     }
 
 function computerChoice() {
@@ -74,28 +63,26 @@ function computerChoice() {
     changeCpuEmoji(cpuChoice);
  
     return cpuChoice;
-}
+    }
+
 function changeCpuEmoji(x){
 
-    if(x == 'rock') {
-        document.getElementById('cpuChoseEmoji').textContent = rockEmoji;
-    } else if(x == 'paper') {
-        document.getElementById('cpuChoseEmoji').textContent = paperEmoji;
-    } else if(x == 'scissors') {
-        document.getElementById('cpuChoseEmoji').textContent = scissorsEmoji;
-    }
+    (x == 'rock')     ? document.getElementById('cpuChoseEmoji').textContent = rockEmoji:   
+    (x == 'paper')    ? document.getElementById('cpuChoseEmoji').textContent = paperEmoji:
+    (x == 'scissors') ? document.getElementById('cpuChoseEmoji').textContent = scissorsEmoji:
+    '';
 }
 
 function changePlayerEmoji(x){
 
-    if(x == 'rock') {
-        document.getElementById('YouChoseEmoji').textContent = rockEmoji;
-    } else if(x == 'paper') {
-        document.getElementById('YouChoseEmoji').textContent = paperEmoji;
-    } else if(x == 'scissors') {
-        document.getElementById('YouChoseEmoji').textContent = scissorsEmoji;
-    }
-    
+    (x == 'rock')     ? document.getElementById('YouChoseEmoji').textContent = rockEmoji:
+    (x == 'paper')    ? document.getElementById('YouChoseEmoji').textContent = paperEmoji:
+    (x == 'scissors') ? document.getElementById('YouChoseEmoji').textContent = scissorsEmoji:
+    '';
+}
+function increaseRoundCounter() {
+    roundCounter++;
+    document.getElementById('roundNumber').textContent = roundCounter;
 }
 
 function playRound () {
@@ -104,16 +91,14 @@ function playRound () {
     
     if (computerSelection == playerSelection){
         document.getElementById('roundWinner').textContent = `It's a tie`;
-        roundCounter++;
-        document.getElementById('roundNumber').textContent = roundCounter;
+        increaseRoundCounter();
 
     } else if (computerSelection == 'rock' && playerSelection == 'scissors' 
             || computerSelection == 'scissors' && playerSelection == 'paper' 
             || computerSelection == 'paper' && playerSelection == 'rock') {
             document.getElementById('roundWinner').textContent = `CPU win this round`;
             computerCounter++;
-            roundCounter++;
-            document.getElementById('roundNumber').textContent = roundCounter;
+            increaseRoundCounter();
             document.getElementById('cpuScore').textContent = computerCounter;
 
     } else if (playerSelection == 'rock' && computerSelection == 'scissors'    
@@ -121,8 +106,7 @@ function playRound () {
             || playerSelection == 'paper' && computerSelection == 'rock') {
             document.getElementById('roundWinner').textContent = `You win this round`;
             playerCounter++;
-            roundCounter++;
-            document.getElementById('roundNumber').textContent = roundCounter;
+            increaseRoundCounter();
             document.getElementById('playerScore').textContent = playerCounter;
     };
 
