@@ -76,7 +76,7 @@ align-items: center;
     margin: 15px 0px 0px 0px;
 }
 
-.gameCourt{
+#gameCourt{
     display: flex;
     flex-direction: column;
 }

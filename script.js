@@ -6,6 +6,8 @@ let computerCounter = 0;
 let playerCounter = 0;
 let roundCounter = 0;
 
+hideFinalWinner();
+
 const btn = document.querySelectorAll('button.emojiButton');
 btn.forEach((button) => {
     button.addEventListener('click', () => {
@@ -17,6 +19,18 @@ btn.forEach((button) => {
     });
 
 });;
+
+function hideFinalWinner() {
+
+    const displayWinner = document.getElementById("displayWinner");
+    const gameCourt = document.getElementById("gameCourt");
+        
+        if (displayWinner.style.display === "none") {
+            gameCourt.style.display = "flex";
+        } else {
+            displayWinner.style.display = "none";
+        }
+    }
 
 function computerChoice() {
     
@@ -97,7 +111,6 @@ function playRound () {
         document.getElementById('playerScore').textContent = playerCounter;
         roundCounter = 0;
         document.getElementById('roundNumber').textContent = roundCounter;
-
     };
 
 };
