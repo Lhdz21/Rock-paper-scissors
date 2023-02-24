@@ -5,7 +5,6 @@ let playerChoice;
 let computerCounter = 0;
 let playerCounter = 0;
 let roundCounter = 0;
-
 hideFinalWinner();
 
 const btn = document.querySelectorAll('button.emojiButton');
@@ -23,13 +22,31 @@ btn.forEach((button) => {
 function hideFinalWinner() {
 
     const displayWinner = document.getElementById("displayWinner");
+        
+        if (displayWinner.style.display === "") {
+            displayWinner.style.display = "none";
+        } 
+    }
+function hideGameCourt() {
+
     const gameCourt = document.getElementById("gameCourt");
         
+        if (gameCourt.style.display === "") {
+            gameCourt.style.display = "none";
+        } 
+    }
+
+function ShowFinalWinner() {
+
+    const displayWinner = document.getElementById("displayWinner");
+    const gameCourt = document.getElementById("gameCourt");
+    const scoreBoard = document.getElementById("scoreBoard");
+   
         if (displayWinner.style.display === "none") {
-            gameCourt.style.display = "flex";
-        } else {
-            displayWinner.style.display = "none";
-        }
+            displayWinner.style.display = "flex";
+            gameCourt.style.display = "none";
+            scoreBoard.style.display = "none";
+        } 
     }
 
 function computerChoice() {
@@ -51,7 +68,6 @@ function changeCpuEmoji(x){
     } else if(x == 'scissors') {
         document.getElementById('cpuChoseEmoji').textContent = scissorsEmoji;
     }
-    
 }
 
 function changePlayerEmoji(x){
@@ -95,22 +111,20 @@ function playRound () {
     };
 
     if (computerCounter == 5){
-        alert('COMPUTER WINS');
-        computerCounter = 0;
-        document.getElementById('cpuScore').textContent = computerCounter;
-        playerCounter = 0;
-        document.getElementById('playerScore').textContent = playerCounter;
-        roundCounter = 0;
-        document.getElementById('roundNumber').textContent = roundCounter;
-
+        document.getElementById('theWinner').textContent = 'COMPUTER WINS';
+        ShowFinalWinner();
+        resetCounters();
     } else if (playerCounter == 5 ){
-        alert('YOU WIN');
-        computerCounter = 0;
-        document.getElementById('cpuScore').textContent = computerCounter;
-        playerCounter = 0;
-        document.getElementById('playerScore').textContent = playerCounter;
-        roundCounter = 0;
-        document.getElementById('roundNumber').textContent = roundCounter;
-    };
-
+        document.getElementById('theWinner').textContent = 'YOU WIN';
+        ShowFinalWinner();
+        resetCounters() };
 };
+
+function resetCounters() {
+    computerCounter = 0;
+    document.getElementById('cpuScore').textContent = computerCounter;
+    playerCounter = 0;
+    document.getElementById('playerScore').textContent = playerCounter;
+    roundCounter = 0;
+    document.getElementById('roundNumber').textContent = roundCounter;
+}
