@@ -5,6 +5,14 @@ function startGame () {
 };
 }
 
+function computerChoice() {
+    
+    let gameOptions = ['rock','paper','scissors'];
+    let index = Math.floor(Math.random() * 3);
+    let computerChoice= (`${gameOptions.at(index)}`);
+    console.log(computerChoice);
+}
+
 let computerCounter = 0;
 let playerCounter = 0;
 let roundCounter = 0;
@@ -13,10 +21,7 @@ function playRound () {
     let playerSelection = prompt('choose between rock paper or scissors',);
     console.log(playerSelection);
 
-    let gameOptions = ['rock','paper','scissors'];
-    let index = Math.floor(Math.random() * 3);
-    let computerChoice= (`${gameOptions.at(index)}`);
-    console.log(computerChoice);
+  
     
     if (computerChoice == playerSelection){
         alert("it's a draw");
