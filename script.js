@@ -1,17 +1,22 @@
-let rockEmoji = String.fromCodePoint(9994,127997);
-let paperEmoji = String.fromCodePoint(9995,127997); 
-let scissorsEmoji = String.fromCodePoint(9996,127997);
+const rockEmoji = String.fromCodePoint(9994,127997);
+const paperEmoji = String.fromCodePoint(9995,127997); 
+const scissorsEmoji = String.fromCodePoint(9996,127997);
+
 let playerChoice;
 let computerCounter = 0;
 let playerCounter = 0;
 let roundCounter = 0;
+
 const gameCourt = document.getElementById("gameCourt");
 const scoreBoard = document.getElementById("scoreBoard");
 const displayWinner = document.getElementById("displayWinner");
+
 hideFinalWinner();
 
 const btn = document.querySelectorAll('button.emojiButton');
+
 btn.forEach((button) => {
+
     button.addEventListener('click', () => {
     playerChoice = `${button.id}`;
     document.getElementById('youChose').textContent = `You Chose`;
