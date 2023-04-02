@@ -35,9 +35,9 @@ function hideFinalWinner() {
 
 function showGameCourt() {
 
-    gameCourt.style.display = "flex";
+    gameCourt.style.display = "grid";
     displayWinner.style.display = "none";
-    scoreBoard.style.display = "flex";
+    scoreBoard.style.display = "grid";
     cleanUpGame();
     }
 
@@ -53,7 +53,7 @@ function cleanUpGame() {
 function ShowFinalWinner() {
 
     if (displayWinner.style.display === "none") {
-        displayWinner.style.display = "flex";
+        displayWinner.style.display = "grid";
         gameCourt.style.display = "none";
         scoreBoard.style.display = "none";
     } 

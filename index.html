@@ -11,53 +11,55 @@
     <title>R-P-S GAME</title>
 </head>
 <body>
-    <div class="header">
+    <header>
         <h1>Rock Paper Scissors</h1>
         <p class="lightText">first to score 5 wins the game</p>
-    </div>
-    <div id="scoreBoard">
-      <div class="player">
-        <p class="scoreBoardFont">PLAYER</p>
-        <p id="playerScore" class="numbersFont">0</p>
-      </div>
-      <div class="round">
-        <p class="scoreBoardFont">ROUND</p>
-        <p id="roundNumber" class="numbersFont">0</p>
-      </div>
-      <div class="cpu">
-        <p class="scoreBoardFont">CPU</p>
-        <p id="cpuScore" class="numbersFont">0</p>
-      </div>
+    </header>
+    <main>
+        <div id="scoreBoard">
+          <div class="player">
+            <p class="scoreBoardFont">PLAYER</p>
+            <p id="playerScore" class="numbersFont">0</p>
+          </div>
+          <div class="round">
+            <p class="scoreBoardFont">ROUND</p>
+            <p id="roundNumber" class="numbersFont">0</p>
+          </div>
+          <div class="cpu">
+            <p class="scoreBoardFont">CPU</p>
+            <p id="cpuScore" class="numbersFont">0</p>
+          </div>
         
-    </div>
-    <div id="gameCourt">
-        <div class="gameDisplay">
-            <div class="gameDisplay1">
-                <P id="YouChoseEmoji" class="emojis"></P>
-                <P id="youChose" class="gamerText"></P>
+        </div>
+        <div id="gameCourt">
+            <div class="gameDisplay">
+                <div class="gameDisplay1">
+                    <P id="YouChoseEmoji" class="emojis"></P>
+                    <P id="youChose" class="gamerText"></P>
+                </div>
+                <div class="gameDisplay1">
+                    <p id="roundWinner" class="gamerText"></p>
+                </div>
+                <div class="gameDisplay1">
+                    <p id="cpuChoseEmoji" class="emojis"></p>
+                    <p id="cpuChose" class="gamerText"></p>
+                </div>
             </div>
-            <div class="gameDisplay1">
-                <p id="roundWinner" class="gamerText"></p>
-            </div>
-            <div class="gameDisplay1">
-                <p id="cpuChoseEmoji" class="emojis"></p>
-                <p id="cpuChose" class="gamerText"></p>
+            <p class="gamerText">Choose one option!</p>
+            <div class="buttonsContainer">
+                <button id="rock" class="emojiButton"> &#9994;&#127997;</button>
+                <button id="paper" class="emojiButton"> &#9995;&#127997;</button>
+                <button id="scissors" class="emojiButton"> &#9996;&#127997;</button>
             </div>
         </div>
-        <p class="gamerText">Choose one option!</p>
-        <div class="buttonsContainer">
-            <button id="rock" class="emojiButton"> &#9994;&#127997;</button>
-            <button id="paper" class="emojiButton"> &#9995;&#127997;</button>
-            <button id="scissors" class="emojiButton"> &#9996;&#127997;</button>        
-        </div>    
-    </div>
-    <div id='displayWinner' class="finalScore">
-        <p id="theWinner" class="gamerText"></p>
-        <button id="playAgain">PLAY AGAIN</button>
-    </div>
-    <div class="footer">
+        <div id='displayWinner' class="finalScore">
+            <p id="theWinner" class="gamerText"></p>
+            <button id="playAgain">PLAY AGAIN</button>
+        </div>
+    </main>
+    <footer>
         <p>Copyright © <a href="https://github.com/MalangaCode">MalangaCode</a> 2023.</p>
-    </div>
+    </footer>
     
 </body>
 </html>
